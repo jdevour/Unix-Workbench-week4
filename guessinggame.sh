@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
+#File guessinggame.sh
 
 #Set the correct answer based on the contents of the current directory
-answer="$(ls -p | grep -v / | wc -l)"
+
+num_files () {
+	ls -p | grep -v / | wc -l
+}
+
+answer="$( num_files )"
+
 
 #prompt user for a guess
 echo "Can you guess how many files (not counting diretories) are in this directory?"
